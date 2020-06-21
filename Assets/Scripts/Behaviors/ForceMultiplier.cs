@@ -17,10 +17,8 @@ public class ForceMultiplier : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        foreach (ContactPoint contact in collision.contacts)
-        {
-            Debug.DrawRay(contact.point, contact.normal, Color.white);
-        }
+        // Simple force to add some exaggeration to colisions
+        // TODO make collisions more epic :)
         rb.AddForce((collision.relativeVelocity + Vector3.up) * multiplier);
     }
 
